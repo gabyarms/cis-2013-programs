@@ -72,12 +72,14 @@ return floatTrianglePerim.toFixed(2);
   var calcCircleArea= function()
   {
     var floatRadius = parseFloat($("radius").value);
+	  alert("The Circle area is " + circleArea(floatRadius));
   };
 
   function circleArea(floatRadius)
   {
-   var floatCircleArea = Math.PI * Math.pow(floatRadius,2);
-   alert("The Circle area is " + circleArea(floatRadius));
+   var floatCircleArea = parseFloat(Math.PI * Math.pow(floatRadius,2));
+	  return floatCircleArea.toFixed(2);
+   
   }
 	
 

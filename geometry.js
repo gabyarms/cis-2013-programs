@@ -52,7 +52,7 @@ function triArea(floatTriSide1,floatTriSide2,floatTriSide3)
 var floatTriangleArea = Math.sqrt((floatS*(floatS-floatTriSide1)*(floatS-floatTriSide2)*(floatS-floatTriSide3)));
 return floatTriangleArea.toFixed(2);
 }
-  var calcTrianglePerim= function()
+  var calcTriPerim= function()
 { var floatTriSide1 = parseFloat($("tri_side1").value);
     var floatTriSide2 = parseFloat($("tri_side2").value);
     var floatTriSide3 = parseFloat($("tri_side3").value);

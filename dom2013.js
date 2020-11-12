@@ -31,9 +31,9 @@ stringFinalGrade="D";
 if(floatTotalPts >= 50)
 stringFinalGrade="F";
 }
-};
 
 $("final_grade").value=stringFinalGrade;
+};
 
 window.onload = function () 
 {

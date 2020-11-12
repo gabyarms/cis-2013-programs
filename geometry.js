@@ -7,6 +7,12 @@ var $ = function (id)
 //this function performs all the circle, triangle, and circle calculations and prints the results
 var do_it = function ()
 {
+	var floatRectWidth = parseFloat($("rect_width").value);
+               var floatRectHeight = parseFloat($("rect_height").value);              
+               var floatTriSide1 = parseFloat($("tri_side1").value);
+               var floatTriSide2 = parseFloat($("tri_side2").value);          
+               var floatTriSide3 = parseFloat($("tri_side3").value);
+               var floatRadius = parseFloat($("radius").value); 
 alert ("The Rectangle area is " + rectArea(floatRectWidth,floatRectHeight) + 
 	" and the perimeter is " + rectPerim (floatRectWidth,floatRectHeight) + 
 	"\n\n" + "The Triangle area is " + 	triArea(floatTriSide1,floatTriSide2,floatTriSide3) + 

@@ -12,10 +12,28 @@ floatMidPts= parseFloat($("mid_pts").value);
 floatFinPts= parseFloat($("fin_pts").value);
  floatTotalPts= parseFloat( floatFinPts + floatHwPts + floatMidPts);
  intGradeOption= parseFloat($("grade_option").value);
- stringFinalGrade= parseFloat($("final_grade").value);
+if (intGradeOption===1)
+{ if(floatTotalPts >= 80)
+    stringFinalGrade="Pass";
+ else
+     stringFinalGrade="Fail";
+}
+if (intGradeOption===2)
+{
+ if(floatTotalPts >= 90)
+stringFinalGrade="A";
+if(floatTotalPts >= 80)
+stringFinalGrade="B";
+if(floatTotalPts >= 70)
+stringFinalGrade="C";
+if(floatTotalPts >= 60)
+stringFinalGrade="D";
+if(floatTotalPts >= 50)
+stringFinalGrade="F";
+}
 };
 
-alert("Your final grade is: " +stringFinalGrade);
+parseFloat($("final_grade").value)=stringFinalGrade;
 
 window.onload = function () 
 {

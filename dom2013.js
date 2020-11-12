@@ -11,7 +11,7 @@ var calculate_click = function ()
 floatMidPts= parseFloat($("mid_pts").value);
 floatFinPts= parseFloat($("fin_pts").value);
  floatTotalPts= parseFloat( floatFinPts + floatHwPts + floatMidPts);
- intGradeOption= parseFloat($("grade_option").value);
+ intGradeOption= parseInt($("grade_option").value);
 if (intGradeOption===1)
 { if(floatTotalPts >= 80)
     stringFinalGrade="Pass";
@@ -22,13 +22,13 @@ if (intGradeOption===2)
 {
  if(floatTotalPts >= 90)
 stringFinalGrade="A";
-if(floatTotalPts >= 80)
+if(floatTotalPts >= 80 && floatTotalPts<90)
 stringFinalGrade="B";
-if(floatTotalPts >= 70)
+if(floatTotalPts >= 70 && floatTotalPts<80)
 stringFinalGrade="C";
-if(floatTotalPts >= 60)
+if(floatTotalPts >= 60 && floatTotalPts<70)
 stringFinalGrade="D";
-if(floatTotalPts >= 50)
+if(floatTotalPts >= 50 && floatTotalPts<60)
 stringFinalGrade="F";
 }
 

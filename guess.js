@@ -36,7 +36,7 @@ while (isNaN(intMax)||intMax<=(intMin+1))
 
 {
 
-        intMax = parseInt(prompt("I'm sorry but your highest number choice was invalid.  Choose highest number in range:”;
+        intMax = parseInt(prompt("I'm sorry but your highest number choice was invalid.  Choose highest number in range:”));
 
 }
 

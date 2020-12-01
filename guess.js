@@ -28,7 +28,7 @@ while (isNaN(intMin)||intMin<0)
 
  
 
-intMax = parseInt(prompt("Choose the highest number in your guessing range that must be 2 more than” + intMin));
+intMax = parseInt(prompt("Choose the highest number in your guessing range that must be 2 more than” + intMin))
 
  
 

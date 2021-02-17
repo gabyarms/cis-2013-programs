@@ -6,6 +6,6 @@ var floatAge = prompt("Enter your age");
   floatMonths = parseFloat(floatMonths);
  var intWeeks= (floatDays / 7).toFixed(2);
 var intFortnights = (floatDays /14).toFixed(2);
-alert ("You are " + floatMonths +" approximate months.\nYou are " +intFortnights+ "approximate fortnights.\nYou are " +intWeeks+ " approximate weeks.\nYou are " + floatDays +
+alert ("You are " + floatMonths +" approximate months.\nYou are " +intFortnights+ " approximate fortnights.\nYou are " +intWeeks+ " approximate weeks.\nYou are " + floatDays +
 " approximate days.");
 

@@ -52,6 +52,8 @@ if (boolPrinting === true) {
          {stringOutput = " "+stringMessage3;}
       else
 {stringOutput = " "+stringMessage6;}
+   }
+}
 $("output").value=stringOutput;
 };
 

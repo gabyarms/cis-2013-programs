@@ -27,23 +27,27 @@ var fixPrinter = function() {
 
     //enter your code here and don't forget to send the output to the DOM
 if (boolPrinting === true) { 
-   if (boolRedLight=== true) 
+   if (boolRedLight=== true) {
       if (boolRecognised === true)
      { stringOutput = " "+stringMessage2+" "+stringMessage3+" "+stringMessage4;}
 } else
          {stringOutput = " "+stringMessage4+" "+stringMessage5;}
-         
-   if (boolRecognised === true)
+}
+   
+  else if (boolRecognised === true)
    {stringOutput = " "+stringMessage1+" "+stringMessage2+" "+stringMessage3;}
       else 
          {stringOutput = " "+stringMessage5;}
-
-  if (boolRedLight === true)
+} else
+{
+  if (boolRedLight === true) {
       if (boolRecognised === true)
         { stringOutput = " "+stringMessage3+" "+stringMessage4;}
       else
          {stringOutput = " "+stringMessage4;}
+  }
    else
+   {
       if (boolRecognised === true)
          {stringOutput = " "+stringMessage3;}
       else

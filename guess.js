@@ -1,126 +1,99 @@
-//initialize variables
+//initialize variables 
 
- 
+var intMax, intMin, intRandom, intGuess, intCount;
 
-var intMax;
-var intMin;
-var intRandom;
-var intGuess;
-var intCount;
+/* the following section prompts the user to enter the low number of their guessing range
+ * and then validates that the user entered an actual number and make sure that the
+ * number is at least 0.
+*/
 
- 
-
-//enter and test the minimum value
-
-intMin = parseInt(prompt("Choose the lowest number but no lower than 0 in your guessing range: "));
-
- 
-
-while (isNaN(intMin)||intMin<0)
-
-{
-
-        intMin = parseInt(prompt("I am sorry but your lowest number choice was invalid. Choose the lowest number in range."));
-
-}
-
-
-//enter and test the maximum value
+intMin = parseInt(prompt("Choose the lower number in the range. It must be at least zero."));
+while (intMin < 0 || isNaN(intMin))
+    {
+        intMin = parseInt(prompt("I'm sorry. You entered an invalid number. Try again."));
+    }
 
 
 
- intMax = parseInt(prompt( "Choose the highest number in your guessing range that must be 2 more than + intMin"));
 
-while (isNaN(intMax)||intMax<=(intMin+1))
 
-{
- intMax = parseInt(prompt("I am sorry but your highest number choice was invalid.  Choose highest number in range: "));
 
-}
+/* the following section prompts the user to enter the high number of their guessing range
+ * and then validates that the user entered an actual number and make sure that the
+ * number is at least 2 more than the minimum (so that there is some guessing involved).
+*/
+intMax = parseInt(prompt("Choose the upper number in the range. It must be at least " + (intMin+2)));
+while (intMax < (intMin +2) || isNaN(intMax))
+       {
+            intMax = parseInt(prompt("I'm sorry. You entered an invalid number. Try again."));
+        }
 
- 
 
-//Create the random number for the program.
-//formula
 
+
+
+
+
+
+/*The following line of code generates the random number to be used in the guessing game.
+ * Math.floor rounds the random number down to the nearest integer
+ * Math.random() generates a random number between 0 and 1
+ * the portion of (intMax-intMin +1) provides the range of random values
+ * the addition of + intMin provides the floor for the random number 
+ */
 intRandom = parseInt (Math.floor(Math.random()*(intMax-intMin+1))+intMin);
 
- 
 
 // set the loop counter
 
 intCount = 1;
 
- 
-
-//enter and test the maximum value
-
- 
-
-intGuess = parseInt(prompt("What is your guess on the random number between" + intMin + " and " + intMax));
-
- 
-//start loop
-
-while (isNaN(intGuess)||intGuess < intMin|| intGuess > intMax)
-
+/* the following section prompts the user to enter their guess
+ * and then validates that the user entered an actual number and makes sure that the
+ * number is between the allowed max and min number choices.
+*/
+// between minimum and maximum, not a number, not between 
+intGuess = parseInt(prompt("Enter your guess. It must between " + intMin + " and " + intMax));
+while (intGuess < intMin || intGuess > intMax || isNaN(intGuess))
 {
-
-        intGuess = parseInt(prompt("I am sorry but your number guess was invalid. Send a new guess between" + intMin + " and " + intMax));
-
+    intGuess = parseInt(prompt("I'm sorry. You entered an invalid guess. Try again."));
 }
 
- 
 
- 
 
-//loop to compare guess against the random number
-//increment
+
+/* The following section provides the main loop and logic for the program.
+ * The user's guess is compared to the randomly generated number and feedback
+ * is given based upon whether the guess is higher or lower. The loop exits when
+ * the user chooses the correct number. Each time through the loop updates the loop counter.
+ */
+//guess less than number
+//validate the new guesses inserted
+//alert user when guesses are too high or too low and are in the correct range. 
 
 while (intGuess != intRandom)
-
 {
-
-        if (intGuess < intRandom)
-
+    if (intGuess < intRandom)
+    {
+        intGuess = parseInt(prompt("Your guess of " + intGuess + " is too low. Please guess again."));
+        while (isNaN(intGuess) || intGuess < intMin || intGuess > intMax)
         {
-
-               alert ("Your choice of " + intGuess + " too low! Try again.");
-
+            intGuess = parseInt(prompt("Sorry, you need to choose a number between " + intMin + " and " + intMax));
         }
-
-        else
-
+    }
+    else {
+        intGuess = parseInt(prompt("Your guess of " + intGuess + " is too high. Guess again."));
+        while (isNaN(intGuess) || intGuess < intMin || intGuess > intMax)
         {
-
-               alert ("Your choice of " + intGuess + " too high! Try again.");
-
+            intGuess = parseInt(prompt("Sorry, you need to choose a number between " + intMin + " and " + intMax));
         }
-
-        intCount++;
-
-        intGuess = parseInt(prompt("What is your guess on the random number between\n " +
-
-                       intMin + " and " + intMax));
-
-        while (isNaN(intGuess)||intGuess < intMin|| intGuess > intMax)
-
-        {
-
-               intGuess = parseInt(prompt("I'm sorry but your number guess was invalid.  What is your guess on the random number between" + intMin + " and " + intMax));
-
-        }
-
-       
-
+    }
+    intCount++;
 }
-
+ 
+  
  
 
-// provides final output upon successful guessing
-
- // use alert
-
-alert("Congratulations! You guessed the correct number" + intRandom );
-
- //had trouble with the alert with string syntax error
+// provide final output alert
+alert("Congratulations!!! You guessed the correct number (" + intRandom +")\n" +
+		" and it only took you " + intCount + " attempts! You receive " + intCount + " points.");
